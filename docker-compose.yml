@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  minetest:
+    image: alpine:latest
+    container_name: luanti_server
+    command: sh -c "apk add --no-cache minetest-server && minetestserver --config /etc/minetest/minetest.conf"
+    ports:
+      - "30000:30000/udp"
+    restart: always
